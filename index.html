@@ -162,8 +162,9 @@ label{display:block;font-weight:600;margin:.9rem 0 .3rem}
 <div id="toast" role="status"></div>
 
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIuja-4prdqqL4_7_sryl1Eqh-wktx2gTFw9qB8z-VYQ8rw03nJazptTKHTJ5Nh1eA2Q/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmiJ2sSYai2i-EkzO9zp6mbvELYGZTBZ6NdVsxddMuA0DjeGipmd-qBGTqKY2trz2YKg/exec";
 const $ = id => document.getElementById(id);
+const fileIn = document.getElementById("file");
 const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; };
 let items = [], sort = "new", cur = null, pending = null;
 let liked = new Set();
@@ -286,18 +287,18 @@ function setFile(f) {
     const cx = cv.getContext("2d"); cx.fillStyle = "#fff"; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(im, 0, 0, cv.width, cv.height);
     pending = cv.toDataURL("image/jpeg", 0.88);
     const p = el("img"); p.src = pending; p.alt = "ตัวอย่างรูป";
-    $("drop").textContent = ""; $("drop").append(p, el("small", "", "แตะเพื่อเปลี่ยนรูป"), $("file"));
+    $("drop").textContent = ""; $("drop").append(p, el("small", "", "แตะเพื่อเปลี่ยนรูป"), fileIn);
     URL.revokeObjectURL(url);
   };
   im.onerror = () => { $("msg").textContent = "เปิดรูปนี้ไม่ได้ ลองไฟล์อื่น"; };
   im.src = url;
 }
-$("file").onchange = e => setFile(e.target.files[0]);
+fileIn.onchange = e => setFile(e.target.files[0]);
 const dr = $("drop");
 ["dragenter", "dragover"].forEach(n => dr.addEventListener(n, e => { e.preventDefault(); dr.classList.add("over"); }));
 ["dragleave", "drop"].forEach(n => dr.addEventListener(n, e => { e.preventDefault(); dr.classList.remove("over"); }));
 dr.addEventListener("drop", e => setFile(e.dataTransfer.files[0]));
-dr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("file").click(); } };
+dr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fileIn.click(); } };
 
 $("upF").onsubmit = async e => {
   e.preventDefault();
@@ -312,7 +313,7 @@ $("upF").onsubmit = async e => {
     const r = await res.json();
     if (!r.ok) throw new Error(r.error || "fail");
     upD.close(); $("upF").reset(); pending = null;
-    $("drop").textContent = ""; $("drop").append(Object.assign(el("span"), { innerHTML: "แตะหรือลากรูปมาวางที่นี่<br><small>JPG / PNG / WEBP</small>" }), $("file"));
+    $("drop").textContent = ""; $("drop").append(Object.assign(el("span"), { innerHTML: "แตะหรือลากรูปมาวางที่นี่<br><small>JPG / PNG / WEBP</small>" }), fileIn);
     $("msg").textContent = ""; toast("ส่งผลงานแล้ว ขอบคุณที่มาแชร์!"); load();
   } catch (err) { $("msg").textContent = "ส่งไม่สำเร็จ: " + (err.message === "fail" ? "ลองใหม่อีกครั้ง" : err.message); }
   btn.disabled = false;
