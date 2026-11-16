@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Amil Neko · ช่องทางติดตาม</title>
+<meta name="theme-color" content="#ff7eb9">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--pink:#ff7eb9;--hot:#ff3d9a;--soft:#ffe1ef;--paper:#fff;--bd:3px solid var(--ink)}
+*{box-sizing:border-box;margin:0}
+html{background:var(--pink)}
+body{font-family:'Prompt',sans-serif;color:var(--ink);min-height:100vh;min-height:100dvh;position:relative;
+ padding:max(1.2rem,env(safe-area-inset-top)) 1rem max(2rem,env(safe-area-inset-bottom))}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:url(hero.jpg) center/cover var(--pink)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(255,126,185,.62);
+ background-image:radial-gradient(rgba(255,255,255,.55) 1.6px,transparent 1.8px);background-size:16px 16px}
+:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+
+.wrap{max-width:480px;margin:0 auto;display:grid;gap:1.4rem}
+.side{display:none}
+
+/* profile */
+.me{background:var(--paper);border:var(--bd);border-radius:22px;box-shadow:7px 7px 0 var(--ink);overflow:hidden;text-align:center}
+.cover{height:118px;background:url(room.jpg) center 40%/cover;border-bottom:var(--bd)}
+.avatar{width:116px;height:116px;border-radius:50%;border:5px solid var(--ink);background:url(avatar.jpg) center/cover;margin:-62px auto 0;box-shadow:4px 4px 0 var(--ink)}
+.me h1{margin-top:.5rem;font-weight:800;font-size:3.4rem;line-height:1;letter-spacing:.02em;color:var(--paper);
+ -webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:4px 4px 0 var(--hot)}
+.tag{display:inline-block;margin:.7rem 0 1.2rem;background:var(--soft);border:var(--bd);border-radius:50px;padding:.2rem 1rem;font-weight:600;transform:rotate(-1.5deg);box-shadow:3px 3px 0 var(--ink)}
+
+/* buttons */
+.links{display:grid;gap:1rem;list-style:none;padding:0}
+.btn{display:flex;align-items:center;gap:.9rem;min-height:66px;padding:.6rem 1.1rem;text-decoration:none;color:var(--ink);
+ background:var(--paper);border:var(--bd);border-radius:18px;box-shadow:6px 6px 0 var(--ink);
+ font-weight:800;font-size:1.15rem;line-height:1.2;transition:transform .1s,box-shadow .1s;-webkit-tap-highlight-color:transparent}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.ic{flex:none;width:44px;height:44px;border:var(--bd);border-radius:50%;background:var(--soft);display:grid;place-items:center}
+.ic svg{width:24px;height:24px;fill:var(--ink)}
+.btn span.t{flex:1;text-align:center;padding-right:44px}
+.donate{background:var(--hot);color:#fff;text-shadow:1px 1px 0 var(--ink)}
+.donate .ic{background:var(--paper)}
+.donate .ic svg{fill:var(--hot)}
+.soft{background:var(--soft)}
+.dark{background:var(--ink);color:var(--paper);box-shadow:6px 6px 0 var(--hot)}
+.dark:hover{box-shadow:8px 8px 0 var(--hot)}
+.dark:active{box-shadow:2px 2px 0 var(--hot)}
+.dark .ic{background:var(--pink)}
+
+@media (min-width:900px){
+ body{display:grid;place-items:center;padding:2rem}
+ .wrap{max-width:1040px;grid-template-columns:minmax(0,460px) 1fr;gap:3rem;align-items:center}
+ .cover{display:none}
+ .avatar{margin:1.6rem auto 0}
+ .me h1{font-size:4.4rem}
+ .side{display:block;position:relative;min-height:560px}
+ .side .big{position:absolute;inset:0 0 70px 40px;background:url(room.jpg) 30% center/cover;border:5px solid var(--ink);border-radius:22px;box-shadow:10px 10px 0 var(--ink);transform:rotate(1.5deg)}
+ .side .small{position:absolute;left:0;bottom:0;width:62%;aspect-ratio:16/9;background:url(hero.jpg) center/cover;border:5px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--hot);transform:rotate(-3deg)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main>
+    <header class="me" style="margin-bottom:1.4rem">
+      <div class="cover" aria-hidden="true"></div>
+      <div class="avatar" role="img" aria-label="Amil"></div>
+      <h1>AMIL</h1>
+      <div class="tag">VTuber · Game Streamer</div>
+    </header>
+
+    <ul class="links">
+      <li><a class="btn donate" href="https://easydonate.app/amil" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3 4.6 4.6 0 0 1 8 3c0 5.800-8 11-8 11z"/></svg></span>
+        <span class="t">โดเนทขึ้นจอเริ่มต้น 10 บาท</span></a></li>
+      <li><a class="btn" href="https://www.youtube.com/@Amilneko" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></span>
+        <span class="t">YouTube</span></a></li>
+      <li><a class="btn soft" href="https://www.twitch.tv/amil18up" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 3 3 7v12h4v3h3l3-3h4l5-5V3zm15 10-3 3h-4l-3 3v-3H6V5h13zm-3-6h-2v5h2zm-5 0H9v5h2z"/></svg></span>
+        <span class="t">Twitch</span></a></li>
+      <li><a class="btn dark" href="https://www.tiktok.com/@amil.neko" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M16.500 3c.3 2.400 1.700 3.900 4 4v3.200c-1.400.1-2.700-.3-4-1.100v6.100a5.600 5.600 0 1 1-5.600-5.600c.3 0 .6 0 .9.100v3.300a2.400 2.400 0 1 0 1.500 2.200V3z"/></svg></span>
+        <span class="t">TikTok</span></a></li>
+      <li><a class="btn soft" href="https://discord.com/invite/DekQ5HjNe8" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M19.700 5.300A17 17 0 0 0 15.500 4l-.5 1a15 15 0 0 0-4 0l-.5-1a17 17 0 0 0-4.200 1.300C3.600 9.300 2.900 13.200 3.200 17a17 17 0 0 0 5.100 2.600l1.100-1.800c-.6-.2-1.200-.5-1.700-.9l.4-.3a12 12 0 0 0 10.200 0l.4.300c-.5.400-1.100.700-1.700.9l1.100 1.800a17 17 0 0 0 5.100-2.600c.4-4.400-.7-8.300-2.100-11.700zM9.500 14.800c-1 0-1.700-.9-1.700-2s.7-2 1.700-2 1.700.9 1.700 2-.7 2-1.700 2zm5 0c-1 0-1.700-.9-1.700-2s.7-2 1.700-2 1.700.9 1.700 2-.7 2-1.700 2z"/></svg></span>
+        <span class="t">Discord : Tuna Zone</span></a></li>
+      <li><a class="btn dark" href="https://amil18up-cmd.github.io/amil-fanart/" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="m12 2 2.900 6.300 6.800.7-5.100 4.600 1.500 6.700L12 16.800 5.900 20.300l1.500-6.700L2.300 9l6.800-.7z"/></svg></span>
+        <span class="t">Fanart Gallery</span></a></li>
+    </ul>
+  </main>
+
+  <aside class="side" aria-hidden="true">
+    <div class="big"></div>
+    <div class="small"></div>
+  </aside>
+</div>
+</body>
+</html>
