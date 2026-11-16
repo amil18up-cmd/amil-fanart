@@ -1,262 +1,324 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amil FanArt - Cyber Sparkle Gallery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Prompt', sans-serif; }
-    body {
-      background: #1a0826;
-      background-image: radial-gradient(at 0% 0%, rgba(255, 105, 180, 0.3) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(255, 182, 193, 0.3) 0px, transparent 50%);
-      background-attachment: fixed; color: #333; min-height: 100vh;
-    }
-    header { text-align: center; padding: 3rem 1rem 2rem; }
-    .header-title { font-size: 3rem; font-weight: 700; color: #fff; text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493; }
-    .header-sub { color: #ffe4e1; font-size: 1.1rem; margin-top: 0.5rem; }
-    
-    .upload-btn-main {
-      display: inline-block; text-decoration: none; margin-top: 1.5rem;
-      background: linear-gradient(45deg, #ff1493, #ff69b4); color: white; border: none;
-      padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; cursor: pointer;
-      box-shadow: 0 0 20px rgba(255, 20, 147, 0.6); transition: all 0.3s;
-    }
-    .upload-btn-main:hover { transform: scale(1.08); box-shadow: 0 0 30px rgba(255, 20, 147, 0.9); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amil Neko Fanart</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--pink:#ff7eb9;--hot:#ff3d9a;--soft:#ffe1ef;--paper:#fff;--bd:3px solid var(--ink)}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Prompt',sans-serif;color:var(--ink);background:var(--soft);
+ background-image:radial-gradient(var(--pink) 1.6px,transparent 1.8px);background-size:16px 16px;min-height:100vh}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
 
-    .container { max-width: 1200px; margin: 1rem auto 4rem; padding: 0 1.5rem; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
-    
-    .card {
-      background: rgba(255, 255, 255, 0.95); border-radius: 24px; overflow: hidden;
-      border: 2px solid rgba(255, 182, 193, 0.5); transition: all 0.3s;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .card:hover { transform: translateY(-8px); border-color: #ff69b4; }
-    .card-img-wrapper { width: 100%; padding-top: 100%; position: relative; cursor: pointer; overflow: hidden; }
-    .card-img-wrapper img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; transition: transform 0.3s; }
-    .card-img-wrapper:hover img { transform: scale(1.05); }
-    
-    .card-body { padding: 1.2rem; }
-    .card-title { font-size: 1.2rem; font-weight: 700; color: #2a0845; }
-    .card-artist { font-size: 0.95rem; color: #ff1493; font-weight: 600; margin-bottom: 0.8rem; }
-    
-    .card-stats {
-      display: flex; justify-content: space-around; align-items: center;
-      padding-top: 0.8rem; border-top: 1px solid #ffe4e1; font-size: 0.9rem; color: #666;
-    }
-    .stat-item { display: flex; align-items: center; gap: 5px; }
-    .like-btn { cursor: pointer; color: #ff1493; transition: transform 0.2s; user-select: none; }
-    .like-btn:hover { transform: scale(1.2); }
+/* hero */
+header{position:relative;overflow:hidden;background:linear-gradient(rgba(255,126,185,.25),rgba(255,126,185,.45)),url(hero.jpg) center 35%/cover var(--pink);border-bottom:5px solid var(--ink);padding:3.2rem 1rem 3.4rem;text-align:center}
+.logo{position:relative;display:inline-block}
+.logo svg{width:86px;height:auto;display:block;margin:0 auto -6px}
+h1{position:relative;font-weight:800;font-size:clamp(2.4rem,9vw,5rem);line-height:1.05;letter-spacing:-.02em;color:var(--paper);
+ -webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:5px 5px 0 var(--ink)}
+h1 span{color:var(--soft)}
+.tag{position:relative;display:inline-block;margin-top:1rem;background:var(--paper);border:var(--bd);border-radius:50px;padding:.3rem 1.1rem;font-weight:600;box-shadow:4px 4px 0 var(--ink);transform:rotate(-1.5deg)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;background:var(--hot);color:#fff;border:var(--bd);border-radius:14px;padding:.7rem 1.4rem;font-weight:800;font-size:1.1rem;box-shadow:5px 5px 0 var(--ink);transition:transform .1s,box-shadow .1s;text-shadow:1px 1px 0 var(--ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
+.btn.white{background:var(--paper);color:var(--ink);text-shadow:none}
+.btn:disabled{opacity:.6;cursor:wait}
+header .btn{position:relative;margin-top:1.4rem}
 
-    .modal {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;
-      padding: 1rem; backdrop-filter: blur(8px);
-    }
-    .modal-content {
-      background: #fff; border-radius: 24px; max-width: 900px; width: 95%; max-height: 92vh;
-      overflow-y: auto; display: flex; flex-direction: column; position: relative;
-    }
-    .close-modal { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: #ff1493; cursor: pointer; z-index: 1010; font-weight: bold; }
-    
-    .modal-img-box { width: 100%; background: #0e0414; display: flex; justify-content: center; align-items: center; padding: 1rem; }
-    .modal-img-box img { max-width: 100%; max-height: 60vh; object-fit: contain; border-radius: 12px; }
+/* toolbar */
+.bar{max-width:1200px;margin:1.6rem auto 0;padding:0 1rem;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.tabs{display:flex;gap:.5rem}
+.tab{cursor:pointer;background:var(--paper);border:var(--bd);border-radius:50px;padding:.3rem 1rem;font-weight:600;box-shadow:3px 3px 0 var(--ink)}
+.tab[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+#count{font-weight:600}
 
-    .modal-details { padding: 1.5rem 2rem; }
-    .comments-section { margin-top: 1.5rem; border-top: 2px solid #ffe4e1; padding-top: 1rem; }
-    .comment-box { max-height: 150px; overflow-y: auto; background: #fdf2f8; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; }
-    .comment-item { padding: 0.4rem 0; border-bottom: 1px dashed #f472b6; font-size: 0.95rem; word-break: break-word; }
-    .comment-item:last-child { border-bottom: none; }
-    
-    .comment-inputs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .comment-inputs input { padding: 0.6rem 1rem; border: 1px solid #ff69b4; border-radius: 20px; outline: none; }
-    .comment-inputs button { background: #ff1493; color: white; border: none; padding: 0.6rem 1.5rem; border-radius: 20px; cursor: pointer; font-weight: 600; }
-    .comment-inputs button:hover { background: #db2777; }
-  </style>
+/* gallery */
+main{max-width:1200px;margin:1.2rem auto 4rem;padding:0 1rem}
+#grid{columns:260px;column-gap:1.4rem}
+.card{break-inside:avoid;margin-bottom:1.4rem;background:var(--paper);border:var(--bd);border-radius:16px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.card:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:9px 9px 0 var(--ink)}
+.thumb{display:block;width:100%;background:var(--soft);border:0;border-bottom:var(--bd);cursor:pointer;padding:0;min-height:140px}
+.thumb img{display:block;width:100%;height:auto}
+.info{padding:.7rem .9rem .8rem}
+.title{font-weight:800;font-size:1.1rem;line-height:1.25;word-break:break-word}
+.by{font-size:.88rem;font-weight:600;color:var(--hot)}
+.stats{display:flex;gap:.5rem;margin-top:.6rem}
+.pill{display:inline-flex;align-items:center;gap:.3rem;background:var(--paper);border:2px solid var(--ink);border-radius:50px;padding:.1rem .7rem;font-weight:600;font-size:.9rem;cursor:pointer}
+.pill.on{background:var(--pink)}
+.pill.static{cursor:default;background:var(--soft)}
+.state{text-align:center;font-weight:800;font-size:1.3rem;background:var(--paper);border:var(--bd);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:2rem 1rem;max-width:480px;margin:2rem auto}
+.state p{font-weight:400;font-size:1rem;margin:.4rem 0 1rem}
+
+footer{max-width:1200px;margin:0 auto 3rem;padding:0 1rem}
+footer img{display:block;width:100%;height:clamp(150px,28vw,340px);object-fit:cover;object-position:center 40%;border:5px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--ink)}
+.strip{height:120px;background:url(room.jpg) center 45%/cover;border-bottom:var(--bd)}
+/* dialogs */
+dialog{border:var(--bd);border-radius:20px;padding:0;background:var(--paper);box-shadow:10px 10px 0 var(--ink);max-width:min(920px,94vw);width:100%;max-height:92vh;overflow:auto;margin:auto}
+dialog::backdrop{background:rgba(255,126,185,.75);background-image:radial-gradient(var(--ink) 1.4px,transparent 1.6px);background-size:14px 14px}
+.x{position:absolute;top:.7rem;right:.7rem;z-index:2;width:42px;height:42px;border-radius:50%;border:var(--bd);background:var(--paper);font-weight:800;font-size:1.3rem;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+.view{background:var(--soft);border-bottom:var(--bd);display:flex;justify-content:center;padding:1rem}
+.view img{max-width:100%;max-height:62vh;object-fit:contain;border:var(--bd);background:#fff}
+.det{padding:1.1rem 1.4rem 1.4rem}
+.det h2{font-size:1.6rem;font-weight:800}
+.cm{margin:1rem 0;max-height:170px;overflow:auto;background:var(--soft);border:2px solid var(--ink);border-radius:12px;padding:.6rem .8rem}
+.cm p{padding:.3rem 0;border-bottom:2px dashed var(--pink);word-break:break-word;white-space:pre-wrap}
+.cm p:last-child{border:0}
+.cm b{color:var(--hot)}
+.row{display:flex;gap:.5rem;flex-wrap:wrap}
+input[type=text]{flex:1;min-width:130px;border:var(--bd);border-radius:12px;padding:.6rem .9rem;background:var(--paper);outline:none}
+input[type=text]:focus{box-shadow:4px 4px 0 var(--pink)}
+.small{padding:.55rem 1.1rem;font-size:1rem;box-shadow:4px 4px 0 var(--ink)}
+
+/* upload */
+form{padding:1.5rem 1.4rem}
+form h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem;padding-right:3rem}
+label{display:block;font-weight:600;margin:.9rem 0 .3rem}
+#drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;text-align:center;min-height:170px;border:3px dashed var(--ink);border-radius:16px;background:var(--soft);cursor:pointer;padding:1rem;font-weight:600}
+#drop.over{background:var(--pink)}
+#drop img{max-width:100%;max-height:260px;border:var(--bd)}
+#drop input{display:none}
+#msg{margin-top:.8rem;font-weight:600;min-height:1.5rem}
+#hp{position:absolute;left:-9999px}
+#toast{position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%) translateY(150%);background:var(--ink);color:#fff;border-radius:50px;padding:.6rem 1.4rem;font-weight:600;transition:transform .25s;z-index:99;max-width:92vw;text-align:center}
+#toast.show{transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="header-title"><i class="fa-solid fa-sparkles"></i> Amil FanArt Gallery <i class="fa-solid fa-sparkles"></i></div>
-    <div class="header-sub">💖 รวบรวมผลงานความน่ารักสไตล์ประกายดาวของ Amil 💖</div>
-    
-    <a href="https://forms.gle/KnrAA5HKAx2bnjKX6" target="_blank" class="upload-btn-main">
-      <i class="fa-solid fa-cloud-arrow-up"></i> ส่งผลงานแฟนอาร์ต
-    </a>
-  </header>
-
-  <div class="container">
-    <div id="loading" style="text-align: center; color: #fff; font-size: 1.2rem; padding: 3rem;">
-      <i class="fa-solid fa-spinner fa-spin"></i> กำลังโหลดผลงานแฟนอาร์ต...
-    </div>
-    <div id="gallery" class="gallery-grid"></div>
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 100 80" aria-hidden="true">
+      <path d="M8 40 L10 4 L40 18 Q50 16 60 18 L90 4 L92 40 Q92 76 50 76 Q8 76 8 40Z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M17 14 L31 21 L19 33Z M83 14 L69 21 L81 33Z" fill="#ff7eb9" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M28 44 q6-8 12 0 M60 44 q6-8 12 0" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <path d="M45 54 q5 5 10 0 M50 54 v4" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="24" cy="54" r="5" fill="#ff7eb9"/><circle cx="76" cy="54" r="5" fill="#ff7eb9"/>
+    </svg>
   </div>
+  <h1>Amil <span>Neko</span><br>Fanart</h1>
+  <div class="tag">แกลเลอรีแฟนอาร์ตของ Amil ฉบับแมวเหมียว</div><br>
+  <button class="btn" id="openUp">ส่งผลงานแฟนอาร์ต</button>
+</header>
 
-  <div id="imageModal" class="modal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="close-modal" onclick="closeModalDirect()">&times;</span>
-      
-      <div class="modal-img-box">
-        <img id="modalImg" src="" alt="Full Image">
-      </div>
+<div class="bar">
+  <div class="tabs" role="group" aria-label="เรียงลำดับ">
+    <button class="tab" data-s="new" aria-pressed="true">ใหม่สุด</button>
+    <button class="tab" data-s="like" aria-pressed="false">ไลก์เยอะสุด</button>
+  </div>
+  <div id="count"></div>
+</div>
 
-      <div class="modal-details">
-        <h2 id="modalTitle" style="color:#2a0845;"></h2>
-        <p id="modalArtist" style="color:#ff1493; font-weight:600; margin-bottom: 1rem;"></p>
-        
-        <div class="card-stats" style="font-size: 1rem; padding-bottom: 1rem; justify-content: flex-start; gap: 2rem;">
-          <span class="stat-item like-btn" id="modalLikeBtn"><i class="fa-solid fa-heart"></i> <span id="modalLikes">0</span> ไลก์</span>
-          <span class="stat-item"><i class="fa-regular fa-comment"></i> <span id="modalCommentsCount">0</span> คอมเมนต์</span>
-        </div>
+<main>
+  <div id="grid"></div>
+  <div id="state" class="state">กำลังโหลดผลงาน...</div>
+</main>
 
-        <div class="comments-section">
-          <h4 style="color:#2a0845; margin-bottom:0.5rem;"><i class="fa-regular fa-comments"></i> ความคิดเห็น</h4>
-          <div id="commentList" class="comment-box"></div>
+<footer><img src="room.jpg" alt="" loading="lazy"></footer>
 
-          <div class="comment-inputs">
-            <input type="text" id="commentUser" placeholder="ชื่อของคุณ" style="flex: 1; min-width: 120px;">
-            <input type="text" id="commentText" placeholder="เขียนความคิดเห็น..." style="flex: 2; min-width: 200px;">
-            <button onclick="submitComment()"><i class="fa-solid fa-paper-plane"></i> ส่ง</button>
-          </div>
-        </div>
-      </div>
-
+<!-- ดูภาพ -->
+<dialog id="viewD" aria-label="ดูผลงาน">
+  <button class="x" onclick="viewD.close()" aria-label="ปิด">✕</button>
+  <div class="view"><img id="vImg" alt=""></div>
+  <div class="det">
+    <h2 id="vTitle"></h2>
+    <div class="by" id="vBy"></div>
+    <div class="stats" style="margin-top:.7rem">
+      <button class="pill" id="vLike"></button>
+      <span class="pill static" id="vViews"></span>
+    </div>
+    <div class="cm" id="vCm"></div>
+    <div class="row">
+      <input type="text" id="cName" maxlength="30" placeholder="ชื่อเล่น (ไม่ใส่ก็ได้)" aria-label="ชื่อเล่น">
+      <input type="text" id="cText" maxlength="200" placeholder="เขียนคอมเมนต์..." style="flex:2" aria-label="คอมเมนต์">
+      <button class="btn small" id="cSend">ส่ง</button>
     </div>
   </div>
+</dialog>
 
-  <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIuja-4prdqqL4_7_sryl1Eqh-wktx2gTFw9qB8z-VYQ8rw03nJazptTKHTJ5Nh1eA2Q/exec";
-    let artData = [];
-    let currentModalIndex = -1;
+<!-- อัปโหลด -->
+<dialog id="upD" aria-label="ส่งผลงาน">
+  <button class="x" onclick="upD.close()" type="button" aria-label="ปิด" style="top:1rem;right:1rem">✕</button>
+  <div class="strip" aria-hidden="true"></div>
+  <form id="upF">
+    <h2>ส่งผลงานแฟนอาร์ต</h2>
+    <label id="drop" tabindex="0" for="file">
+      <span id="dropTxt">แตะหรือลากรูปมาวางที่นี่<br><small>JPG / PNG / WEBP</small></span>
+      <input type="file" id="file" accept="image/*">
+    </label>
+    <label for="uTitle">ชื่อผลงาน *</label>
+    <input type="text" id="uTitle" maxlength="60" required>
+    <label for="uArtist">ชื่อผู้วาด (ชื่อเล่นหรือนามปากกา)</label>
+    <input type="text" id="uArtist" maxlength="30" placeholder="ไม่ใส่ = ไม่ระบุนาม">
+    <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div id="msg" role="status"></div>
+    <button class="btn" id="upGo" style="width:100%;justify-content:center;margin-top:.6rem">ส่งผลงาน</button>
+  </form>
+</dialog>
 
-    async function loadGalleryData() {
-      try {
-        const response = await fetch(SCRIPT_URL);
-        artData = await response.json();
-        renderGallery();
-      } catch (err) {
-        document.getElementById("loading").innerHTML = "ไม่สามารถเชื่อมต่อตารางได้เจ้าค่ะ";
-      }
-    }
+<div id="toast" role="status"></div>
 
-    function renderGallery() {
-      document.getElementById("loading").style.display = "none";
-      const gallery = document.getElementById("gallery");
-      gallery.innerHTML = "";
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIuja-4prdqqL4_7_sryl1Eqh-wktx2gTFw9qB8z-VYQ8rw03nJazptTKHTJ5Nh1eA2Q/exec";
+const $ = id => document.getElementById(id);
+const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; };
+let items = [], sort = "new", cur = null, pending = null;
+let liked = new Set();
+try { liked = new Set(JSON.parse(localStorage.getItem("neko_liked") || "[]")); } catch (e) {}
+const saveLiked = () => { try { localStorage.setItem("neko_liked", JSON.stringify([...liked])); } catch (e) {} };
 
-      if (!artData || artData.length === 0) {
-        gallery.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #fff;">ยังไม่มีผลงานแฟนอาร์ต กดปุ่มด้านบนเพื่อส่งรูปแรกได้เลยเจ้าค่ะ!</p>`;
-        return;
-      }
+function toast(t) { const o = $("toast"); o.textContent = t; o.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => o.classList.remove("show"), 2600); }
+function ping(p) { new Image().src = SCRIPT_URL + "?" + new URLSearchParams(p); }
 
-      artData.forEach((item, index) => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <div class="card-img-wrapper" onclick="openModal(${index})">
-            <img src="${item.imageUrl}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/400?text=Amil+Fanart'">
-          </div>
-          <div class="card-body">
-            <div class="card-title">${item.title}</div>
-            <div class="card-artist"><i class="fa-solid fa-paint-brush"></i> ${item.artist}</div>
-            <div class="card-stats">
-              <span class="stat-item like-btn" onclick="addLike(${index}, event)"><i class="fa-solid fa-heart"></i> <span id="like-count-${index}">${item.likes}</span></span>
-              <span class="stat-item"><i class="fa-regular fa-comment"></i> <span id="comment-count-${index}">${item.comments.length}</span></span>
-            </div>
-          </div>
-        `;
-        gallery.appendChild(card);
-      });
-    }
+/* Drive link -> image url */
+function driveId(u) { const m = String(u || "").match(/[?&]id=([\w-]+)|\/d\/([\w-]+)/); return m ? (m[1] || m[2]) : null; }
+function img(u, w) {
+  const id = driveId(u);
+  return id ? "https://drive.google.com/thumbnail?id=" + id + "&sz=w" + w : u;
+}
+function fallback(i, u) { const id = driveId(u); i.onerror = null; if (id) i.src = "https://lh3.googleusercontent.com/d/" + id + "=w1000"; }
 
-    function openModal(index) {
-      currentModalIndex = index;
-      const item = artData[index];
-      
-      document.getElementById("modalImg").src = item.imageUrl;
-      document.getElementById("modalTitle").innerText = item.title;
-      document.getElementById("modalArtist").innerHTML = `<i class="fa-solid fa-paint-brush"></i> วาดโดย: ${item.artist}`;
-      document.getElementById("modalLikes").innerText = item.likes;
-      document.getElementById("modalCommentsCount").innerText = item.comments.length;
-      
-      document.getElementById("modalLikeBtn").onclick = (e) => addLike(index, e);
+async function load() {
+  try {
+    const r = await (await fetch(SCRIPT_URL)).json();
+    const arr = Array.isArray(r) ? r : (r.items || r.queue || []);
+    items = arr.map((x, i) => ({
+      key: String(x.rowIndex ?? i), row: x.rowIndex, url: x.imageUrl, title: x.title || "ไม่มีชื่อ",
+      artist: x.artist || "ไม่ระบุนาม", likes: +x.likes || 0, views: +x.views || 0,
+      comments: Array.isArray(x.comments) ? x.comments : String(x.comments || "").split("\n").filter(Boolean), order: i
+    })).filter(x => x.url);
+    render();
+  } catch (e) {
+    $("grid").textContent = "";
+    $("state").hidden = false;
+    $("state").textContent = "";
+    $("state").append("โหลดผลงานไม่สำเร็จ", el("p", "", "ตรวจสอบอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง"));
+    const b = el("button", "btn small", "โหลดใหม่"); b.onclick = () => location.reload(); $("state").append(b);
+  }
+}
 
-      renderComments(item.comments);
-      document.getElementById("imageModal").style.display = "flex";
-    }
+function render() {
+  const g = $("grid"); g.textContent = "";
+  const list = [...items].sort((a, b) => sort === "like" ? b.likes - a.likes || b.order - a.order : b.order - a.order);
+  $("count").textContent = list.length + " ผลงาน";
+  $("state").hidden = list.length > 0;
+  if (!list.length) {
+    $("state").textContent = ""; $("state").append("ยังไม่มีผลงาน", el("p", "", "มาเป็นคนแรกที่ส่งแฟนอาร์ตกัน"));
+    const b = el("button", "btn small", "ส่งผลงาน"); b.onclick = () => upD.showModal(); $("state").append(b);
+    return;
+  }
+  list.forEach(it => {
+    const c = el("article", "card");
+    const t = el("button", "thumb"); t.setAttribute("aria-label", "ดู " + it.title);
+    const im = el("img"); im.loading = "lazy"; im.alt = it.title; im.src = img(it.url, 600); im.onerror = () => fallback(im, it.url);
+    t.append(im); t.onclick = () => openView(it);
+    const inf = el("div", "info");
+    const lk = el("button", "pill" + (liked.has(it.key) ? " on" : ""), "♥ " + it.likes);
+    lk.onclick = () => toggleLike(it);
+    it.cardLike = lk;
+    const cm = el("span", "pill static", "💬 " + it.comments.length); it.cardCm = cm;
+    inf.append(el("div", "title", it.title), el("div", "by", "วาดโดย " + it.artist), Object.assign(el("div", "stats"), {}));
+    inf.lastChild.append(lk, cm);
+    c.append(t, inf); g.append(c);
+  });
+}
 
-    function renderComments(comments) {
-      const box = document.getElementById("commentList");
-      box.innerHTML = "";
-      if (!comments || comments.length === 0) {
-        box.innerHTML = `<p style="color:#888; font-size:0.9rem;">ยังไม่มีความคิดเห็น มาเป็นคนแรกกันเลย!</p>`;
-        return;
-      }
-      comments.forEach(c => {
-        const div = document.createElement("div");
-        div.className = "comment-item";
-        div.innerText = c;
-        box.appendChild(div);
-      });
-    }
+function toggleLike(it) {
+  const on = liked.has(it.key);
+  if (on) { liked.delete(it.key); it.likes = Math.max(0, it.likes - 1); ping({ action: "unlike", rowIndex: it.row }); }
+  else { liked.add(it.key); it.likes++; ping({ action: "like", rowIndex: it.row }); }
+  saveLiked(); syncCounts(it);
+}
+function syncCounts(it) {
+  const on = liked.has(it.key);
+  if (it.cardLike) { it.cardLike.textContent = "♥ " + it.likes; it.cardLike.classList.toggle("on", on); }
+  if (it.cardCm) it.cardCm.textContent = "💬 " + it.comments.length;
+  if (cur === it) { $("vLike").textContent = "♥ " + it.likes + " ไลก์"; $("vLike").classList.toggle("on", on); }
+}
 
-    function sendDataToSheet(params) {
-      const query = new URLSearchParams(params).toString();
-      const img = new Image();
-      img.src = SCRIPT_URL + "?" + query;
-    }
+function openView(it) {
+  cur = it; it.views++; ping({ action: "view", rowIndex: it.row });
+  const im = $("vImg"); im.alt = it.title; im.src = img(it.url, 1600); im.onerror = () => fallback(im, it.url);
+  $("vTitle").textContent = it.title; $("vBy").textContent = "วาดโดย " + it.artist;
+  $("vViews").textContent = "👁 " + it.views + " วิว";
+  $("vLike").onclick = () => toggleLike(it);
+  drawComments(); syncCounts(it); viewD.showModal();
+}
+function drawComments() {
+  const b = $("vCm"); b.textContent = "";
+  if (!cur.comments.length) { b.append(el("p", "", "ยังไม่มีคอมเมนต์ มาเป็นคนแรกเลย")); return; }
+  cur.comments.forEach(c => {
+    const i = c.indexOf(": "), p = el("p");
+    if (i > 0) p.append(el("b", "", c.slice(0, i) + ": "), document.createTextNode(c.slice(i + 2)));
+    else p.textContent = c;
+    b.append(p);
+  });
+  b.scrollTop = b.scrollHeight;
+}
+$("cSend").onclick = () => {
+  const text = $("cText").value.trim(); if (!text || !cur) return;
+  const user = $("cName").value.trim() || "ผู้เข้าชม";
+  cur.comments.push(user + ": " + text);
+  ping({ action: "comment", rowIndex: cur.row, user, text });
+  $("cText").value = ""; drawComments(); syncCounts(cur);
+};
+$("cText").onkeydown = e => { if (e.key === "Enter") $("cSend").click(); };
 
-    function addLike(index, event) {
-      if (event) event.stopPropagation();
-      const item = artData[index];
-      item.likes++;
-      
-      document.getElementById(`like-count-${index}`).innerText = item.likes;
-      if (currentModalIndex === index) {
-        document.getElementById("modalLikes").innerText = item.likes;
-      }
+document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
+  sort = t.dataset.s;
+  document.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-pressed", x === t));
+  render();
+});
+[viewD, upD].forEach(d => d.addEventListener("click", e => { if (e.target === d) d.close(); }));
+$("openUp").onclick = () => upD.showModal();
 
-      sendDataToSheet({ action: "like", rowIndex: item.rowIndex });
-    }
+/* ---------- upload ---------- */
+function setFile(f) {
+  if (!f || !f.type.startsWith("image/")) { $("msg").textContent = "เลือกได้เฉพาะไฟล์รูปภาพ"; return; }
+  $("msg").textContent = "";
+  const im = new Image(), url = URL.createObjectURL(f);
+  im.onload = () => {
+    const max = 1800, s = Math.min(1, max / Math.max(im.width, im.height));
+    const cv = document.createElement("canvas"); cv.width = Math.round(im.width * s); cv.height = Math.round(im.height * s);
+    const cx = cv.getContext("2d"); cx.fillStyle = "#fff"; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(im, 0, 0, cv.width, cv.height);
+    pending = cv.toDataURL("image/jpeg", 0.88);
+    const p = el("img"); p.src = pending; p.alt = "ตัวอย่างรูป";
+    $("drop").textContent = ""; $("drop").append(p, el("small", "", "แตะเพื่อเปลี่ยนรูป"), $("file"));
+    URL.revokeObjectURL(url);
+  };
+  im.onerror = () => { $("msg").textContent = "เปิดรูปนี้ไม่ได้ ลองไฟล์อื่น"; };
+  im.src = url;
+}
+$("file").onchange = e => setFile(e.target.files[0]);
+const dr = $("drop");
+["dragenter", "dragover"].forEach(n => dr.addEventListener(n, e => { e.preventDefault(); dr.classList.add("over"); }));
+["dragleave", "drop"].forEach(n => dr.addEventListener(n, e => { e.preventDefault(); dr.classList.remove("over"); }));
+dr.addEventListener("drop", e => setFile(e.dataTransfer.files[0]));
+dr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("file").click(); } };
 
-    function submitComment() {
-      if (currentModalIndex === -1) return;
-      const user = document.getElementById("commentUser").value.trim() || "ผู้เข้าชม";
-      const text = document.getElementById("commentText").value.trim();
+$("upF").onsubmit = async e => {
+  e.preventDefault();
+  if ($("hp").value) return;
+  if (!pending) { $("msg").textContent = "เลือกรูปก่อนนะ"; return; }
+  const btn = $("upGo"); btn.disabled = true; $("msg").textContent = "กำลังอัปโหลด... อย่าปิดหน้านี้";
+  try {
+    const res = await fetch(SCRIPT_URL, {
+      method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ action: "upload", title: $("uTitle").value.trim(), artist: $("uArtist").value.trim() || "ไม่ระบุนาม", image: pending })
+    });
+    const r = await res.json();
+    if (!r.ok) throw new Error(r.error || "fail");
+    upD.close(); $("upF").reset(); pending = null;
+    $("drop").textContent = ""; $("drop").append(Object.assign(el("span"), { innerHTML: "แตะหรือลากรูปมาวางที่นี่<br><small>JPG / PNG / WEBP</small>" }), $("file"));
+    $("msg").textContent = ""; toast("ส่งผลงานแล้ว ขอบคุณที่มาแชร์!"); load();
+  } catch (err) { $("msg").textContent = "ส่งไม่สำเร็จ: " + (err.message === "fail" ? "ลองใหม่อีกครั้ง" : err.message); }
+  btn.disabled = false;
+};
 
-      if (!text) return;
-
-      const item = artData[currentModalIndex];
-      const newCommentFormat = user + ": " + text;
-      
-      item.comments.push(newCommentFormat);
-      renderComments(item.comments);
-      
-      document.getElementById("modalCommentsCount").innerText = item.comments.length;
-      document.getElementById(`comment-count-${currentModalIndex}`).innerText = item.comments.length;
-      document.getElementById("commentText").value = "";
-
-      sendDataToSheet({ 
-        action: "comment", 
-        rowIndex: item.rowIndex, 
-        user: user, 
-        text: text 
-      });
-    }
-
-    function closeModal(e) {
-      if (e.target.id === "imageModal") closeModalDirect();
-    }
-
-    function closeModalDirect() {
-      document.getElementById("imageModal").style.display = "none";
-      currentModalIndex = -1;
-    }
-
-    loadGalleryData();
-  </script>
+load();
+</script>
 </body>
 </html>
